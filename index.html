@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishika Reddy Valluru | Engineering Management Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                        asuMaroon: '#8C1D40',
+                        asuGold: '#FFC627'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s infinite ease-in-out',
+                        'pulse-slow': 'pulse 5s infinite cubic-bezier(0.4, 0, 0.6, 1)'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5, #10B981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 3rem;
+            height: calc(100% - 1rem);
+            width: 2px;
+            background: #E5E7EB;
+        }
+        
+        .skill-pill {
+            transition: all 0.2s ease;
+        }
+        
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .blob {
+            filter: blur(40px);
+            opacity: 0.15;
+            position: absolute;
+            z-index: -1;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4F46E5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+        
+        .project-card:hover .project-overlay {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Color blobs background -->
+    <div class="blob bg-primary w-64 h-64 rounded-full top-20 left-20"></div>
+    <div class="blob bg-secondary w-80 h-80 rounded-full bottom-20 right-20"></div>
+    <div class="blob bg-accent w-72 h-72 rounded-full top-1/2 right-1/4"></div>
+    
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text font-heading">Rishika Reddy Valluru</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary transition">Projects</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition">Education</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition">Contact</a>
+                </nav>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="relative py-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-heading">
+                    <span class="gradient-text">Rishika Reddy Valluru</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
+                    Engineering Management Professional | Data Analyst | UX Enthusiast
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    Passionate about leveraging data-driven insights and user-centered design to optimize business processes and enhance digital experiences.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-primary hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">
+                        Contact Me
+                    </a>
+                    <a href="#projects" class="border border-primary text-primary hover:bg-primary-50 px-6 py-3 rounded-lg font-medium transition">
+                        View Projects
+                    </a>
+                </div>
+                <div class="mt-8 flex space-x-4">
+                    <a href="https://www.linkedin.com/in/rishikareddyvalluru" target="_blank" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-linkedin-in text-gray-700"></i>
+                    </a>
+                    <a href="mailto:rvallur4@asu.edu" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                        <i class="fas fa-envelope text-gray-700"></i>
+                    </a>
+                    <a href="tel:4809378801" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                        <i class="fas fa-phone text-gray-700"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-xl animate-pulse-slow">
+                    <div class="w-60 h-60 md:w-72 md:h-72 bg-white rounded-full flex items-center justify-center shadow-inner overflow-hidden">
+                        <i class="fas fa-user-graduate text-6xl md:text-8xl text-primary"></i>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-accent px-4 py-2 rounded-full shadow-md text-white font-medium">
+                    ASU Graduate Student
+                </div>
+                <div class="absolute -top-6 -right-6 bg-primary px-4 py-2 rounded-full shadow-md text-white font-medium">
+                    Data & UX Specialist
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 font-heading gradient-text">About Me</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <!-- Profile Card -->
+                <div class="lg:w-1/3">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md h-full card-hover">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-40 h-40 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-6">
+                                <div class="w-36 h-36 bg-white rounded-full flex items-center justify-center shadow-inner overflow-hidden">
+                                    <i class="fas fa-user-tie text-5xl text-primary"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2 font-heading">Rishika Reddy Valluru</h3>
+                            <p class="text-primary font-medium mb-4">Engineering Management Professional</p>
+                            
+                            <div class="w-full bg-gray-100 rounded-lg p-4 mb-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Data Analysis</span>
+                                    <span class="text-sm font-bold text-primary">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-gray-100 rounded-lg p-4 mb-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">UX Design</span>
+                                    <span class="text-sm font-bold text-secondary">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/rishikareddyvalluru" target="_blank" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in text-blue-600"></i>
+                                </a>
+                                <a href="mailto:rvallur4@asu.edu" class="bg-red-100 hover:bg-red-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fas fa-envelope text-red-600"></i>
+                                </a>
+                                <a href="tel:4809378801" class="bg-green-100 hover:bg-green-200 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About Content -->
+                <div class="lg:w-2/3">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md h-full card-hover">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800 font-heading">Professional Summary</h3>
+                        <p class="text-gray-600 mb-6">
+                            A results-driven Engineering Management graduate student at Arizona State University with a strong background in data analysis, project management, and user experience design. Passionate about leveraging data-driven insights to optimize business processes and enhance digital experiences.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-primary bg-opacity-10 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-primary p-2 rounded-full mr-3 text-white">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Experience</h4>
+                                </div>
+                                <div class="pl-10">
+                                    <div class="mb-3">
+                                        <h5 class="font-medium text-gray-800">Business Analyst</h5>
+                                        <p class="text-sm text-gray-600">Cognizant Technology Solutions</p>
+                                        <p class="text-xs text-gray-500">July 2021 - May 2023</p>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-800">Marketing Analyst Intern</h5>
+                                        <p class="text-sm text-gray-600">GreyCampus</p>
+                                        <p class="text-xs text-gray-500">Dec 2020 - May 2021</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-secondary bg-opacity-10 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-secondary p-2 rounded-full mr-3 text-white">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Key Achievements</h4>
+                                </div>
+                                <div class="pl-10">
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>Enhanced data-loading efficiency by 18%</li>
+                                        <li>Cut manual workloads by 17% through automation</li>
+                                        <li>Increased social media engagement by 17%</li>
+                                        <li>Improved website traffic by 21.2%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-accent bg-opacity-10 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-accent p-2 rounded-full mr-3 text-white">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Approach</h4>
+                            </div>
+                            <div class="pl-10">
+                                <p class="text-gray-600 mb-3">
+                                    I combine analytical rigor with creative problem-solving to deliver solutions that are both technically sound and user-friendly. My approach emphasizes data-driven decision making, stakeholder collaboration, and continuous improvement.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">Data-Driven</span>
+                                    <span class="text-xs bg-secondary-100 text-secondary-800 px-2 py-1 rounded-full">User-Centered</span>
+                                    <span class="text-xs bg-accent-100 text-accent-800 px-2 py-1 rounded-full">Results-Oriented</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 font-heading gradient-text">Professional Experience</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <!-- Cognizant Experience -->
+                    <div class="timeline-item relative pl-16 pb-10">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary border-4 border-primary-100 flex items-center justify-center">
+                            <i class="fas fa-building text-white text-xs"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-lg font-bold text-gray-800">Business Analyst, Project Management</h4>
+                                <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Full-time</span>
+                            </div>
+                            <div class="text-gray-600 mb-3">
+                                <span class="font-medium">Cognizant Technology Solutions</span> | Hyderabad, India | July 2021 - May 2023
+                            </div>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Enhanced data-loading processes, increasing efficiency by 18% by optimizing Informatica ETL and proactive monitoring</li>
+                                <li>Led automation initiatives in ServiceNow, cutting manual workloads by over 17% and boosting workflow efficiency</li>
+                                <li>Managed and resolved over 83% of technical issues on time by developing effective troubleshooting protocols</li>
+                                <li>Performed over 73 monthly SQL validations ensuring data integrity through meticulous database management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- GreyCampus Experience -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-secondary border-4 border-secondary-100 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xs"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-lg font-bold text-gray-800">Marketing Analyst Intern</h4>
+                                <span class="bg-secondary-100 text-secondary-800 text-xs px-2 py-1 rounded-full font-medium">Internship</span>
+                            </div>
+                            <div class="text-gray-600 mb-3">
+                                <span class="font-medium">GreyCampus</span> | Hyderabad, India | Dec 2020 - May 2021
+                            </div>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Elevated social media engagement by 17% and follower growth by 13% using targeted marketing strategies via Google Ads</li>
+                                <li>Increased email open rates by 13.8% by crafting compelling marketing communications in MailChimp</li>
+                                <li>Improved website traffic by 21.2% through SEO-optimized content creation and analytics tools like SEMrush and Ahrefs</li>
+                                <li>Augmented brand awareness by 26% in collaboration with design teams, applying UX design principles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 font-heading gradient-text">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video Game Sales Analysis -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Video Game Sales Data Analysis</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium">Data Viz</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Comprehensive dashboard in Power BI analyzing global sales trends to aid strategic decision-making.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Power BI</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Data Visualization</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Market Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay text-white">
+                        <h4 class="font-bold mb-2">Key Contributions:</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Synthesized data insights to highlight market dynamics</li>
+                            <li>Conducted regional vs global sales comparisons</li>
+                            <li>Created interactive visualizations for business intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- ASU Class Search Redesign -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-asuMaroon to-asuGold flex items-center justify-center">
+                        <i class="fas fa-university text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">ASU Class Search Redesign</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-medium">UX Design</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            UX redesign of ASU's class search tool to enhance student registration functionality.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Figma</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">User Research</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Prototyping</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay text-white">
+                        <h4 class="font-bold mb-2">Key Contributions:</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Developed wireframes and conducted usability tests</li>
+                            <li>Improved user interface efficiency</li>
+                            <li>Achieved high user satisfaction through iterative design</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- ASU Music Building Renovation -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-teal-600 flex items-center justify-center">
+                        <i class="fas fa-music text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">ASU Music Building Renovation</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Project Mgmt</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Mock renovation project managing scope and resources with Gantt charts and WBS.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Gantt Charts</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">WBS</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Risk Management</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay text-white">
+                        <h4 class="font-bold mb-2">Key Contributions:</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Ensured project completion on time and within budget</li>
+                            <li>Executed rigorous risk assessment and management</li>
+                            <li>Simulated detailed building upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rent it Up App -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center">
+                        <i class="fas fa-home text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Rent it Up App</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">App Design</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Rental accommodation app redesign focusing on user experience improvements.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Figma</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">UX Research</span>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">Prototyping</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay text-white">
+                        <h4 class="font-bold mb-2">Key Contributions:</h4>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Introduced swipe-based interfaces and virtual tours</li>
+                            <li>Increased user engagement through innovative features</li>
+                            <li>Transformed insights into practical prototype</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 font-heading gradient-text">Education</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <!-- ASU Education -->
+                    <div class="timeline-item relative pl-16 pb-10">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-asuMaroon border-4 border-red-100 flex items-center justify-center">
+                            <i class="fas fa-university text-white text-xs"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-lg font-bold text-gray-800">Master of Science in Engineering Management</h4>
+                                <span class="bg-asuMaroon bg-opacity-10 text-asuMaroon text-xs px-2 py-1 rounded-full font-medium">GPA: 3.8/4.0</span>
+                            </div>
+                            <div class="text-gray-600 mb-3">
+                                <span class="font-medium">Arizona State University</span> | Tempe, AZ | May 2025
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Relevant Courses: Data-driven decision-making, Advanced Project Management, Product Design and Evaluation, Data Visualization, User Experience, Strategic Management of Technology, B2B Marketing
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- MLRIT Education -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-indigo-600 border-4 border-indigo-100 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-xs"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-lg font-bold text-gray-800">Bachelor of Technology, Electronics</h4>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full font-medium">GPA: 3.2/4.0</span>
+                            </div>
+                            <div class="text-gray-600 mb-3">
+                                <span class="font-medium">MLR Institute of Technology</span> | Hyderabad, India | July 2021
+                            </div>
+                            <p class="text-gray-600">
+                                Leadership: Chief Organizing Committee (College Club), Chief Organizer (MLRIT Literary Festival and Model United Nations)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 font-heading gradient-text">Skills & Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Technical Skills -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary p-3 rounded-full mr-4 text-white">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">Technical Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Python</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">SQL</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">HTML5/CSS3</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">C</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Tableau</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Power BI</span>
+                        <span class="skill-pill bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Database Mgmt</span>
+                        <span class="skill-pill bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">UX Design</span>
+                    </div>
+                </div>
+                
+                <!-- Tools & Software -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary p-3 rounded-full mr-4 text-white">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">Tools & Software</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-medium">Microsoft Office</span>
+                        <span class="skill-pill bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-medium">Google Suite</span>
+                        <span class="skill-pill bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">Jira</span>
+                        <span class="skill-pill bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">Microsoft Dynamics 365</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Workday</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">ServiceNow</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Figma</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Informatica ETL</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Autosys</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">PeopleSoft</span>
+                    </div>
+                </div>
+                
+                <!-- Analytical Skills -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent p-3 rounded-full mr-4 text-white">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">Analytical Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Data Analysis</span>
+                        <span class="skill-pill bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Report Generation</span>
+                        <span class="skill-pill bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-medium">Workflow Automation</span>
+                        <span class="skill-pill bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-medium">Stakeholder Comm</span>
+                        <span class="skill-pill bg-gray-100 text-gray-800 px-4 py-2 rounded-full font-medium">Market Research</span>
+                        <span class="skill-pill bg-gray-100 text-gray-800 px-4 py-2 rounded-full font-medium">Risk Mitigation</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Digital Marketing</span>
+                        <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">SEMRush</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Ahrefs</span>
+                        <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Google Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-gradient-to-br from-primary to-secondary">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white font-heading">Get In Touch</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Contact Info -->
+                    <div class="bg-gray-50 p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 font-heading">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-full mr-4 text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <a href="mailto:rvallur4@asu.edu" class="text-primary hover:underline">rvallur4@asu.edu</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary p-3 rounded-full mr-4 text-white">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <a href="tel:4809378801" class="text-gray-600">(480) 937-8801</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent p-3 rounded-full mr-4 text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Tempe, AZ 85281</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 p-3 rounded-full mr-4 text-white">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/rishikareddyvalluru" target="_blank" class="text-primary hover:underline">linkedin.com/in/rishikareddyvalluru</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Connect With Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/rishikareddyvalluru" target="_blank" class="bg-blue-100 hover:bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-linkedin-in text-blue-600"></i>
+                                </a>
+                                <a href="mailto:rvallur4@asu.edu" class="bg-red-100 hover:bg-red-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-red-600"></i>
+                                </a>
+                                <a href="tel:4809378801" class="bg-green-100 hover:bg-green-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 font-heading">Send Me a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-2xl font-bold gradient-text font-heading">Rishika Reddy Valluru</div>
+                    <p class="text-gray-400 mt-2">Engineering Management Professional | Data & UX Specialist</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/rishikareddyvalluru" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:rvallur4@asu.edu" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:4809378801" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Rishika Reddy Valluru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active-nav');
+                    });
+                    this.classList.add('active-nav');
+                }
+            });
+        });
+        
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === #${currentSection}) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        const navLinks = document.querySelector('nav');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('right-0');
+            navLinks.classList.toggle('bg-white');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('shadow-md');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('space-x-8');
+        });
+    </script>
+</body>
+</html> 
